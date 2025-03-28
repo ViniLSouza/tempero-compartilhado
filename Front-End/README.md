@@ -67,8 +67,8 @@ O Tempero Compartilhado é uma aplicação web moderna que permite aos usuários
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/ViniLSouza/blog-front.git
-cd blog-front/my-app
+git clone https://github.com/seu-usuario/tempero-compartilhado.git
+cd tempero-compartilhado/Front-End
 ```
 
 2. Instale as dependências:

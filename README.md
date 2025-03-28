@@ -6,14 +6,14 @@ Um blog colaborativo onde usuários podem compartilhar suas experiências culin�
 
 O projeto está dividido em duas partes principais:
 
-### Backend (projeto-blog)
+### Backend (Back-End)
 - API REST construída com Node.js e Express
 - Banco de dados PostgreSQL com Prisma ORM
 - Autenticação JWT
 - Upload de imagens
 - Sistema de posts, comentários e curtidas
 
-### Frontend (my-app)
+### Frontend (Front-End)
 - Aplicação React moderna usando Vite
 - Interface responsiva e amigável
 - Sistema de autenticação
@@ -36,7 +36,7 @@ cd tempero-compartilhado
 
 2. Configure o Backend:
 ```bash
-cd projeto-blog
+cd Back-End
 npm install
 cp .env.example .env
 # Edite o arquivo .env com suas configurações
@@ -45,7 +45,7 @@ npx prisma migrate dev
 
 3. Configure o Frontend:
 ```bash
-cd my-app
+cd Front-End
 npm install
 ```
 
@@ -53,14 +53,14 @@ npm install
 
 ### Backend
 ```bash
-cd projeto-blog
+cd Back-End
 npm run dev
 ```
 O servidor backend estará rodando em `http://localhost:3000`
 
 ### Frontend
 ```bash
-cd my-app
+cd Front-End
 npm run dev
 ```
 A aplicação frontend estará rodando em `http://localhost:5173`
@@ -114,5 +114,8 @@ A aplicação frontend estará rodando em `http://localhost:5173`
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
+## Contato
 
-Link do Projeto: [https://github.com/seu-usuario/tempero-compartilhado](https://github.com/seu-usuario/tempero-compartilhado) 
+Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
+
+Link do Projeto: [https://github.com/ViniLSouza/tempero-compartilhado](https://github.com/ViniLSouza/tempero-compartilhado) 
