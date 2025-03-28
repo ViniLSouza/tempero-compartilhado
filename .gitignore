@@ -72,6 +72,7 @@ uploads/*
 */uploads/*
 /uploads/*
 /src/uploads/*
+/src/uploads/profile/*
 !uploads/.gitkeep
 !*/uploads/.gitkeep
 !/src/uploads/.gitkeep
