@@ -67,11 +67,15 @@ dist/
 *.tsbuildinfo
 next-env.d.ts
 
-# Uploads
-uploads/
-*/uploads/
-/uploads
-/src/uploads
+# Uploads - permitir pastas mas ignorar conteúdo
+uploads/*
+*/uploads/*
+/uploads/*
+/src/uploads/*
+!uploads/.gitkeep
+!*/uploads/.gitkeep
+!/src/uploads/.gitkeep
+!/src/uploads/profile/.gitkeep
 
 # Database
 *.sqlite
