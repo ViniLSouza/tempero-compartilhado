@@ -2,45 +2,84 @@
 node_modules/
 .pnp
 .pnp.js
+dist
+dist-ssr
+*.local
 
 # Testing
 coverage/
+/coverage
+*.lcov
 
 # Production
 build/
 dist/
 
-# Misc
-.DS_Store
+# Environment
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
 
 # Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Editor directories and files
 .idea/
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Uploads directory
-uploads/
-*/uploads/
+# OS
+.DS_Store
+Thumbs.db
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Temp files
 *.tmp
 *.temp
 *.bak
 
-# Uploads directory
+# Build
+.next/
+out/
+build/
+dist/
+
+# Misc
+*.tsbuildinfo
+next-env.d.ts
+
+# Uploads
+uploads/
+*/uploads/
 /uploads
-/src/uploads 
+/src/uploads
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Cache
+.cache/
+.temp/
+.eslintcache
+.stylelintcache 
