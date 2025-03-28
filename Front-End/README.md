@@ -1,142 +1,252 @@
-# 🌶️ Tempero Compartilhado - Blog de Culinária
+# 🌶️ Tempero Compartilhado - Frontend
 
-Uma plataforma para compartilhar receitas e experiências culinárias.
+Interface moderna e responsiva para a plataforma de compartilhamento de receitas.
 
-## 📋 Sobre o Projeto
+## 📋 Sobre o Frontend
 
-O Tempero Compartilhado é uma aplicação web moderna que permite aos usuários compartilharem suas receitas favoritas, dicas culinárias e experiências na cozinha. A plataforma oferece uma interface intuitiva e responsiva, facilitando a interação entre os usuários.
+O frontend do Tempero Compartilhado foi desenvolvido com React e Vite, focando em performance, usabilidade e experiência do usuário. A interface combina um design moderno com funcionalidades intuitivas para criar uma experiência agradável de compartilhamento de receitas.
 
-### 🎯 Funcionalidades
+## 🎯 Funcionalidades Principais
 
-- **Autenticação de Usuários**
-  - Cadastro de novos usuários com validações
-  - Login com email e senha
+### 🔐 Autenticação e Perfil
+- **Sistema Completo de Autenticação**
+  - Login seguro com validações
+  - Registro de novos usuários
   - Recuperação de senha
-  - Validação de força de senha
+  - Tokens JWT com refresh
+  - Persistência de sessão
 
-- **Publicações**
-  - Criação de posts com título e conteúdo
-  - Edição de publicações existentes
-  - Exclusão de publicações com confirmação
-  - Visualização de posts de outros usuários
-  - Editor de texto rico para formatação
-  - Contador de caracteres
-  - Gradientes e efeitos visuais modernos
+- **Gerenciamento de Perfil**
+  - Upload de foto com preview
+  - Edição de dados pessoais
+  - Alteração de senha segura
+  - Preferências do usuário
+  - Histórico de atividades
 
-- **Perfil do Usuário**
-  - Edição completa do perfil
-  - Alteração de senha com validação
-  - Confirmação de senha atual para mudanças
-  - Histórico de publicações
-  - Configurações da conta
+### 📝 Gerenciamento de Posts
+- **Criação e Edição**
+  - Editor rico de texto
+  - Upload de múltiplas imagens
+  - Preview em tempo real
+  - Salvamento automático
+  - Tags e categorias
 
-- **Interação**
-  - Sistema de curtidas com feedback visual
-  - Comentários em publicações
-  - Expansão de seção de comentários
-  - Exclusão de comentários próprios
-  - Animações suaves nas interações
-  - Feedback visual em tempo real
+- **Visualização**
+  - Layout responsivo
+  - Lazy loading de imagens
+  - Paginação infinita
+  - Filtros e busca
+  - Ordenação flexível
 
-## 🛠️ Tecnologias Utilizadas
+### 💬 Interação Social
+- **Sistema de Comentários**
+  - Comentários em tempo real
+  - Edição e exclusão
+  - Respostas aninhadas
+  - Notificações
+  - Moderação
 
-- **Frontend**
-  - React.js 18
-  - CSS Moderno com variáveis
-  - React Router v6
-  - Context API
-  - Axios para requisições HTTP
-  - Animações CSS personalizadas
+- **Engajamento**
+  - Curtidas com animação
+  - Compartilhamento
+  - Salvamento de posts
+  - Seguir usuários
+  - Feed personalizado
 
-- **Backend**
-  - Node.js
-  - Express
-  - PostgreSQL
-  - JWT para autenticação
-  - Bcrypt para criptografia
+## 🛠️ Tecnologias e Ferramentas
 
-## 🚀 Como Executar
+### Core
+- **React** ^19.0.0 - Biblioteca UI
+- **Vite** ^6.2.0 - Build tool
+- **React Router** ^7.4.0 - Navegação
+- **Context API** - Gerenciamento de estado
 
-### Pré-requisitos
+### Estilização
+- **CSS Modules** - Estilos componentizados
+- **CSS Variables** - Design system
+- **CSS Grid/Flexbox** - Layouts responsivos
+- **Animações CSS** - Transições suaves
 
-- Node.js (versão 14 ou superior)
-- npm ou yarn
-- PostgreSQL
+### Desenvolvimento
+- **ESLint** ^9.21.0 - Linting
+- **TypeScript** - Tipagem
+- **React Hooks** - Lógica de componentes
+- **Axios** - Requisições HTTP
 
-### Instalação
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/seu-usuario/tempero-compartilhado.git
-cd tempero-compartilhado/Front-End
-```
-
-2. Instale as dependências:
-```bash
-npm install
-```
-
-3. Configure as variáveis de ambiente:
-```bash
-cp .env.example .env
-# Edite o arquivo .env com suas configurações
-```
-
-4. Inicie o servidor de desenvolvimento:
-```bash
-npm start
-```
-
-## 📁 Estrutura do Projeto
+## 📦 Estrutura de Pastas
 
 ```
 src/
-├── components/     # Componentes reutilizáveis
-├── contexts/      # Contextos React (Auth, Theme)
-├── pages/         # Páginas da aplicação
-│   ├── Home/      # Página principal
-│   ├── Login/     # Autenticação
-│   ├── Cadastro/  # Registro
-│   └── EditarPerfil/ # Edição de perfil
-├── services/      # Serviços e APIs
-└── styles/        # Estilos globais
+├── components/          # Componentes reutilizáveis
+│   ├── UI/             # Componentes de interface
+│   ├── Forms/          # Componentes de formulário
+│   └── Layout/         # Componentes de layout
+├── contexts/           # Contextos React
+│   ├── AuthContext/    # Contexto de autenticação
+│   └── ThemeContext/   # Contexto de tema
+├── hooks/              # Hooks customizados
+├── pages/              # Páginas da aplicação
+├── services/           # Serviços e APIs
+├── styles/             # Estilos globais
+├── utils/              # Utilitários
+└── types/              # Tipagens TypeScript
 ```
 
 ## 🎨 Design System
 
-O projeto utiliza um design system consistente com as seguintes características:
+### Cores
+```css
+:root {
+  --primary: #FF6B6B;
+  --primary-dark: #FF5252;
+  --secondary: #4ECDC4;
+  --background: #F8F9FA;
+  --text: #343A40;
+  --error: #DC3545;
+  --success: #28A745;
+}
+```
 
-- **Cores**
-  - Primária: #FF6B6B
-  - Fundo: #F8F9FA
-  - Texto: #343A40
-  - Erro: #DC3545
-  - Cinzas: variações para hierarquia visual
+### Tipografia
+- **Família**: Sistema padrão otimizada
+- **Tamanhos**: 12px, 14px, 16px, 18px, 20px, 24px
+- **Pesos**: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
 
-- **Tipografia**
-  - Fonte Principal: Sistema padrão
-  - Tamanhos: xs (12px), sm (14px), base (16px), lg (18px), xl (20px)
+### Espaçamento
+- **Grid**: 4px (base unit)
+- **Margins**: 8px, 16px, 24px, 32px, 48px
+- **Paddings**: 8px, 16px, 24px, 32px
+- **Gaps**: 8px, 16px, 24px
 
-- **Espaçamento**
-  - Padding: 0.5rem, 1rem, 1.5rem, 2rem
-  - Margin: 0.5rem, 1rem, 1.5rem, 2rem
-  - Gap: 0.5rem, 1rem, 1.5rem
+### Breakpoints
+```css
+--mobile: 320px
+--tablet: 768px
+--desktop: 1024px
+--large: 1440px
+```
 
-- **Bordas**
-  - Raio: 4px, 8px, 12px
-  - Espessura: 1px, 2px
-  - Estados: normal, hover, focus, error
+## 🚀 Como Executar
 
-## 🔄 Atualizações Recentes
+### Pré-requisitos
+- Node.js >= 14
+- npm ou yarn
+- Backend rodando
 
-### Versão 1.2.0
-- Implementado gradientes nos cards de posts
-- Melhorada a interação com curtidas
-- Adicionada expansão de comentários
-- Aprimorada a estilização geral
-- Implementadas animações suaves
-- Melhorado o feedback visual das interações
+### Instalação
+```bash
+# Clone o repositório
+git clone https://github.com/ViniLSouza/tempero-compartilhado.git
+cd tempero-compartilhado/Front-End
+
+# Instale as dependências
+npm install
+
+# Configure as variáveis de ambiente
+cp .env.example .env
+# Edite o .env conforme necessário
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+## 📱 Responsividade
+
+### Mobile First
+- Layouts adaptáveis
+- Touch targets adequados
+- Gestos touch
+- Performance otimizada
+
+### Breakpoints
+- **< 768px**: Mobile
+- **768px - 1024px**: Tablet
+- **1024px - 1440px**: Desktop
+- **> 1440px**: Large Desktop
+
+## ⚡ Performance
+
+### Otimizações
+- Code splitting
+- Lazy loading
+- Memoização
+- Debounce/Throttle
+- Cache de requisições
+
+### Métricas
+- First Paint < 1s
+- TTI < 3s
+- Bundle size < 200kb
+- Lighthouse > 90
+
+## 🔒 Segurança
+
+- Sanitização de inputs
+- Proteção XSS
+- CSRF tokens
+- Validação de dados
+- HTTP only cookies
+
+## 🧪 Testes
+
+### Unitários
+- Jest
+- React Testing Library
+- Cobertura > 80%
+
+### E2E
+- Cypress
+- Fluxos principais
+- Relatórios
+
+## 📦 Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run dev
+
+# Build
+npm run build
+
+# Preview
+npm run preview
+
+# Lint
+npm run lint
+
+# Testes
+npm run test
+```
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie sua feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'feat: Add AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Convenções
+
+### Commits
+- feat: Nova feature
+- fix: Correção de bug
+- docs: Documentação
+- style: Formatação
+- refactor: Refatoração
+- test: Testes
+- chore: Tarefas
+
+### Código
+- ESLint config
+- Prettier
+- EditorConfig
+- TypeScript strict
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
 
 ---
 
-⭐️ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub!
+⭐ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub!

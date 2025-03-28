@@ -1,121 +1,208 @@
-# Tempero Compartilhado 🌶️
+# 🌶️ Tempero Compartilhado
 
-Um blog colaborativo onde usuários podem compartilhar suas experiências culinárias, receitas e dicas de cozinha.
+Uma plataforma moderna para compartilhar experiências culinárias, receitas e dicas de cozinha.
 
-## Estrutura do Projeto
+## 📋 Sobre o Projeto
+
+O Tempero Compartilhado é uma aplicação web completa que permite aos usuários compartilharem suas receitas favoritas e interagirem com outros amantes da culinária. A plataforma oferece uma interface moderna e intuitiva, combinando as melhores práticas de desenvolvimento com uma experiência de usuário excepcional.
+
+## 🏗️ Estrutura do Projeto
 
 O projeto está dividido em duas partes principais:
 
-### Backend (Back-End)
+### 🔙 Backend (Back-End)
 - API REST construída com Node.js e Express
 - Banco de dados PostgreSQL com Prisma ORM
-- Autenticação JWT
-- Upload de imagens
-- Sistema de posts, comentários e curtidas
+- Autenticação segura com JWT
+- Upload e gerenciamento de imagens
+- Sistema completo de posts, comentários e curtidas
+- Documentação detalhada das rotas
+- Validações e tratamento de erros
 
-### Frontend (Front-End)
+### 🎨 Frontend (Front-End)
 - Aplicação React moderna usando Vite
 - Interface responsiva e amigável
-- Sistema de autenticação
-- Gerenciamento de posts, comentários e curtidas
-- Upload de imagens de perfil
+- Sistema robusto de autenticação
+- Gerenciamento de estado com Context API
+- Upload e preview de imagens
+- Feedback visual em tempo real
+- Animações suaves e transições
+- Design system consistente
 
-## Requisitos
+## ⚙️ Requisitos
 
 - Node.js (versão 14 ou superior)
-- PostgreSQL
+- PostgreSQL (versão 12 ou superior)
 - npm ou yarn
+- Espaço para upload de imagens
 
-## Configuração do Ambiente
+## 🚀 Configuração do Ambiente
 
-1. Clone o repositório:
+### 1. Clone o Repositório
 ```bash
-git clone https://github.com/seu-usuario/tempero-compartilhado.git
+git clone https://github.com/ViniLSouza/tempero-compartilhado.git
 cd tempero-compartilhado
 ```
 
-2. Configure o Backend:
+### 2. Configure o Backend
 ```bash
 cd Back-End
 npm install
+
+# Configure as variáveis de ambiente
 cp .env.example .env
-# Edite o arquivo .env com suas configurações
+# Edite o arquivo .env com suas configurações:
+# DATABASE_URL="postgresql://user:password@localhost:5432/tempero_db"
+# JWT_SECRET="sua_chave_secreta"
+# PORT=3000
+
+# Execute as migrações do banco de dados
 npx prisma migrate dev
 ```
 
-3. Configure o Frontend:
+### 3. Configure o Frontend
 ```bash
-cd Front-End
+cd ../Front-End
 npm install
+
+# Configure as variáveis de ambiente (se necessário)
+cp .env.example .env
 ```
 
-## Executando o Projeto
+## 🎯 Executando o Projeto
 
 ### Backend
 ```bash
 cd Back-End
 npm run dev
 ```
-O servidor backend estará rodando em `http://localhost:3000`
+O servidor estará disponível em `http://localhost:3000`
 
 ### Frontend
 ```bash
 cd Front-End
 npm run dev
 ```
-A aplicação frontend estará rodando em `http://localhost:5173`
+A aplicação estará disponível em `http://localhost:5173`
 
-## Funcionalidades
+## 💡 Funcionalidades
 
-### Posts
-- Criação de posts com título e conteúdo
-- Edição de posts próprios
-- Exclusão de posts próprios
-- Visualização de todos os posts
-- Sistema de curtidas
+### 📝 Gerenciamento de Posts
+- Criação de posts com título e conteúdo rico
+- Edição e exclusão de posts próprios
+- Upload de imagens para posts
+- Sistema de curtidas e comentários
+- Visualização de posts de outros usuários
 
-### Comentários
+### 💬 Sistema de Comentários
 - Adição de comentários em posts
-- Exclusão de comentários próprios
-- Visualização de comentários por post
+- Edição e exclusão de comentários próprios
+- Expansão/contração da seção de comentários
+- Notificações de novos comentários
 
-### Perfil de Usuário
-- Cadastro de usuários
-- Login/Logout
-- Edição de perfil
+### 👤 Perfil de Usuário
+- Cadastro e autenticação seguros
+- Edição completa do perfil
 - Upload de foto de perfil
+- Histórico de atividades
+- Gerenciamento de preferências
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 ### Backend
-- Node.js
-- Express
-- Prisma ORM
-- PostgreSQL
-- JWT para autenticação
-- Multer para upload de arquivos
+- **Node.js** - Ambiente de execução
+- **Express** - Framework web
+- **Prisma** - ORM para banco de dados
+- **PostgreSQL** - Banco de dados
+- **JWT** - Autenticação e autorização
+- **Multer** - Upload de arquivos
+- **Cors** - Segurança de requisições
+- **Bcrypt** - Criptografia de senhas
 
 ### Frontend
-- React
-- Vite
-- Context API para gerenciamento de estado
-- CSS Modules para estilização
-- React Router para navegação
+- **React** - Biblioteca UI
+- **Vite** - Build tool e dev server
+- **React Router** - Navegação
+- **Context API** - Gerenciamento de estado
+- **CSS Modules** - Estilização
+- **Axios** - Cliente HTTP
+- **React Icons** - Ícones
+- **React Toastify** - Notificações
 
-## Contribuição
+## 🤝 Contribuição
 
 1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
+2. Crie uma branch para sua feature
+   ```bash
+   git checkout -b feature/MinhaFeature
+   ```
+3. Commit suas mudanças
+   ```bash
+   git commit -m 'feat: Adiciona nova feature'
+   ```
+4. Push para a branch
+   ```bash
+   git push origin feature/MinhaFeature
+   ```
 5. Abra um Pull Request
 
-## Licença
+## 📝 Convenções de Código
+
+- **Commits:** Seguimos o padrão Conventional Commits
+- **Código:** ESLint e Prettier para formatação
+- **Branches:** feature/, hotfix/, bugfix/
+- **Documentação:** JSDoc para documentação de código
+
+## 🔒 Segurança
+
+- Autenticação JWT
+- Sanitização de inputs
+- Proteção contra XSS
+- Rate limiting
+- Validação de dados
+- Criptografia de senhas
+
+## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## Contato
+## 📱 Responsividade
 
-Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
+- Mobile First
+- Breakpoints consistentes
+- Adaptação de layout
+- Touch-friendly
+- Otimização de imagens
 
-Link do Projeto: [https://github.com/ViniLSouza/tempero-compartilhado](https://github.com/ViniLSouza/tempero-compartilhado) 
+## ⚡ Performance
+
+- Lazy loading de imagens
+- Code splitting
+- Caching otimizado
+- Compressão de assets
+- Otimização de bundle
+
+## 🌐 Deploy
+
+- Frontend: Vercel/Netlify
+- Backend: Heroku/Railway
+- Banco de dados: Railway
+- Imagens: Amazon S3/Cloudinary
+
+## 📞 Contato
+
+Vinícius Souza
+- GitHub: [@ViniLSouza](https://github.com/ViniLSouza)
+- LinkedIn: [Vinícius Souza](https://www.linkedin.com/in/seu-linkedin)
+- Email: seu.email@exemplo.com
+
+## 🔄 Status do Projeto
+
+![GitHub last commit](https://img.shields.io/github/last-commit/ViniLSouza/tempero-compartilhado)
+![GitHub issues](https://img.shields.io/github/issues/ViniLSouza/tempero-compartilhado)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/ViniLSouza/tempero-compartilhado)
+![GitHub stars](https://img.shields.io/github/stars/ViniLSouza/tempero-compartilhado)
+
+---
+
+⭐ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub! 
