@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id            Int          @id @default(autoincrement())
+  nome          String
+  email         String       @unique
+  senha         String
+  telefone      String
+  foto          String?      // Campo opcional para armazenar a URL da foto
+  criadoEm      DateTime     @default(now())
+  atualizadoEm  DateTime     @updatedAt
+  posts         Post[]       // Relação com os posts do usuário
+  comentarios   Comentario[] // Relação com os comentários do usuário
+  curtidas      Curtida[]    // Relação com as curtidas do usuário
+
+  @@map("usuarios")
+}
+
+model Post {
+  id          Int          @id @default(autoincrement())
+  titulo      String
+  conteudo    String
+  dataCriacao DateTime     @default(now()) @map("data_criacao")
+  usuario     Usuario      @relation(fields: [usuarioId], references: [id])
+  usuarioId   Int          @map("usuario_id")
+  comentarios Comentario[] // Relação com os comentários do post
+  curtidas    Curtida[]    // Relação com as curtidas do post
+  
+  // Campo virtual para contar curtidas (não é armazenado no banco)
+  // Contagem é feita através de consulta
+
+  @@map("posts")
+}
+
+model Comentario {
+  id             Int      @id @default(autoincrement())
+  comentario     String
+  dataComentario DateTime @default(now()) @map("data_comentario")
+  
+  // Relação com o Post
+  post           Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId         Int      @map("post_id")
+  
+  // Relação com o Usuário
+  usuario        Usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId      Int      @map("usuario_id")
+
+  @@map("comentarios")
+}
+
+model Curtida {
+  id          Int      @id @default(autoincrement())
+  dataCurtida DateTime @default(now()) @map("data_curtida")
+  
+  // Relação com o Post
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId      Int      @map("post_id")
+  
+  // Relação com o Usuário
+  usuario     Usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId   Int      @map("usuario_id")
+
+  // Cada usuário só pode curtir um post uma vez
+  @@unique([postId, usuarioId])
+  @@map("curtidas")
+}
