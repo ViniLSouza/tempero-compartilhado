@@ -1,116 +1,118 @@
-# 🌶️ Tempero Compartilhado
+# Tempero Compartilhado 🌶️
 
-Uma rede social para compartilhar e descobrir receitas deliciosas.
+Um blog colaborativo onde usuários podem compartilhar suas experiências culinárias, receitas e dicas de cozinha.
 
-## 📋 Sobre o Projeto
+## Estrutura do Projeto
 
-O Tempero Compartilhado é uma plataforma onde os usuários podem compartilhar suas receitas favoritas, interagir com outros cozinheiros através de curtidas e comentários, e descobrir novas inspirações culinárias.
+O projeto está dividido em duas partes principais:
 
-## 🚀 Funcionalidades
+### Backend (projeto-blog)
+- API REST construída com Node.js e Express
+- Banco de dados PostgreSQL com Prisma ORM
+- Autenticação JWT
+- Upload de imagens
+- Sistema de posts, comentários e curtidas
 
-- 👤 Cadastro e autenticação de usuários
-- 📝 Criação, edição e exclusão de posts
-- ❤️ Sistema de curtidas
-- 💬 Comentários em posts
-- 🖼️ Upload de fotos de perfil
-- 🔍 Visualização de posts de outros usuários
+### Frontend (my-app)
+- Aplicação React moderna usando Vite
+- Interface responsiva e amigável
+- Sistema de autenticação
+- Gerenciamento de posts, comentários e curtidas
+- Upload de imagens de perfil
 
-## 🛠️ Tecnologias Utilizadas
+## Requisitos
 
-### Frontend
-- React.js
-- CSS3 com variáveis
-- Fetch API para requisições HTTP
+- Node.js (versão 14 ou superior)
+- PostgreSQL
+- npm ou yarn
 
-### Backend
-- Node.js
-- Express.js
-- Prisma (ORM)
-- MySQL
-- JWT para autenticação
-- Multer para upload de arquivos
-
-## 🔧 Instalação
+## Configuração do Ambiente
 
 1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/tempero-compartilhado.git
+cd tempero-compartilhado
 ```
 
-2. Instale as dependências do backend:
+2. Configure o Backend:
 ```bash
 cd projeto-blog
 npm install
+cp .env.example .env
+# Edite o arquivo .env com suas configurações
+npx prisma migrate dev
 ```
 
-3. Instale as dependências do frontend:
+3. Configure o Frontend:
 ```bash
 cd my-app
 npm install
 ```
 
-4. Configure as variáveis de ambiente:
-- Crie um arquivo `.env` na pasta `projeto-blog` com as seguintes variáveis:
-```env
-DATABASE_URL="mysql://usuario:senha@localhost:3306/nome_do_banco"
-JWT_SECRET="sua_chave_secreta"
-```
+## Executando o Projeto
 
-5. Execute as migrações do banco de dados:
+### Backend
 ```bash
-npx prisma migrate dev
-```
-
-6. Inicie o servidor backend:
-```bash
+cd projeto-blog
 npm run dev
 ```
+O servidor backend estará rodando em `http://localhost:3000`
 
-7. Em outro terminal, inicie o frontend:
+### Frontend
 ```bash
 cd my-app
 npm run dev
 ```
+A aplicação frontend estará rodando em `http://localhost:5173`
 
-## 📁 Estrutura do Projeto
+## Funcionalidades
 
-```
-projeto-blog/          # Backend
-├── src/
-│   ├── config/       # Configurações
-│   ├── controllers/  # Controladores
-│   ├── middlewares/  # Middlewares
-│   ├── routes/       # Rotas
-│   └── uploads/      # Arquivos enviados
-└── prisma/           # Schemas e migrações
+### Posts
+- Criação de posts com título e conteúdo
+- Edição de posts próprios
+- Exclusão de posts próprios
+- Visualização de todos os posts
+- Sistema de curtidas
 
-my-app/               # Frontend
-├── src/
-│   ├── components/   # Componentes React
-│   ├── contexts/     # Contextos
-│   ├── pages/        # Páginas
-│   ├── services/     # Serviços
-│   └── utils/        # Utilitários
-```
+### Comentários
+- Adição de comentários em posts
+- Exclusão de comentários próprios
+- Visualização de comentários por post
 
-## 🤝 Contribuindo
+### Perfil de Usuário
+- Cadastro de usuários
+- Login/Logout
+- Edição de perfil
+- Upload de foto de perfil
+
+## Tecnologias Utilizadas
+
+### Backend
+- Node.js
+- Express
+- Prisma ORM
+- PostgreSQL
+- JWT para autenticação
+- Multer para upload de arquivos
+
+### Frontend
+- React
+- Vite
+- Context API para gerenciamento de estado
+- CSS Modules para estilização
+- React Router para navegação
+
+## Contribuição
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Faça commit das suas alterações (`git commit -m 'Add some AmazingFeature'`)
-4. Faça push para a branch (`git push origin feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📝 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Autores
 
-- Seu Nome - [GitHub](https://github.com/seu-usuario)
-
-## 🙏 Agradecimentos
-
-- Agradeça aqui quem ajudou no projeto
-- Mencione bibliotecas importantes utilizadas
-- Etc... 
+Link do Projeto: [https://github.com/seu-usuario/tempero-compartilhado](https://github.com/seu-usuario/tempero-compartilhado) 
