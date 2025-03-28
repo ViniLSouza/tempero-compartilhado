@@ -191,10 +191,15 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-Vinícius Souza
+Vinícius Souza (Desenvolvedor Frontend)
 - GitHub: [@ViniLSouza](https://github.com/ViniLSouza)
-- LinkedIn: [Vinícius Souza](https://www.linkedin.com/in/seu-linkedin)
-- Email: seu.email@exemplo.com
+- Repositório original do Frontend: [blog-front](https://github.com/ViniLSouza/blog-front)
+
+Felipe Souza (Desenvolvedor Backend)
+- GitHub: [@souza-felipe](https://github.com/souza-felipe)
+- Repositório original do Backend: [projeto-blog](https://github.com/souza-felipe/projeto-blog)
+
+> Este projeto é uma colaboração entre Vinícius (Frontend) e Felipe (Backend). Você pode conferir o início do desenvolvimento nos repositórios originais de cada desenvolvedor.
 
 ## 🔄 Status do Projeto
 
