@@ -1,0 +1,433 @@
+/**
+ * Container principal da página de edição de perfil
+ */
+.editar-perfil-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 1rem;
+}
+
+/**
+ * Conteúdo da página
+ */
+.editar-perfil-content {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+/**
+ * Card do formulário
+ */
+.editar-perfil-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  width: 100%;
+  transition: transform var(--transition-fast);
+}
+
+.editar-perfil-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+/**
+ * Cabeçalho do card
+ */
+.editar-perfil-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.editar-perfil-header h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.editar-perfil-header p {
+  color: var(--grey-600);
+  font-size: var(--font-size-sm);
+}
+
+/**
+ * Seção de foto de perfil
+ */
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--grey-100);
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all var(--transition-fast);
+  background-color: var(--grey-200);
+  display: block;
+}
+
+.profile-image-container:hover .profile-image {
+  filter: brightness(0.7);
+}
+
+.profile-image-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all var(--transition-fast);
+  color: var(--white);
+  gap: 0.5rem;
+}
+
+.profile-image-container:hover .profile-image-upload {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.upload-icon {
+  background-color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.upload-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image-hint {
+  color: var(--grey-600);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  background-color: var(--grey-100);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/**
+ * Formulário
+ */
+.editar-perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: var(--grey-700);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--grey-200);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  background-color: var(--grey-100);
+  color: var(--grey-800);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.form-control::placeholder {
+  color: var(--grey-500);
+}
+
+/**
+ * Botões de ação
+ */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.cancel-button {
+  background-color: var(--white);
+  color: var(--grey-700);
+  border: 2px solid var(--grey-300);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cancel-button:hover {
+  background-color: var(--grey-100);
+  border-color: var(--grey-400);
+}
+
+.save-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+.save-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+.save-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+.save-button:disabled {
+  background-color: var(--grey-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/**
+ * Mensagens de feedback
+ */
+.error-message {
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.75rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: var(--border-radius-md);
+}
+
+.success-message {
+  color: var(--success);
+  font-size: var(--font-size-sm);
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.75rem;
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: var(--border-radius-md);
+}
+
+/**
+ * Responsividade
+ */
+@media (max-width: 480px) {
+  .editar-perfil-card {
+    padding: 1.5rem;
+  }
+
+  .editar-perfil-header h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .form-group label {
+    font-size: var(--font-size-xs);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+
+  .profile-image-container {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/**
+ * Modal de confirmação de senha
+ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  width: 90%;
+  max-width: 400px;
+  box-shadow: var(--box-shadow-lg);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--grey-200);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.close-button {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--grey-600);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: all var(--transition-fast);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
+  background-color: var(--grey-100);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-body p {
+  color: var(--grey-700);
+  margin-bottom: 1rem;
+  font-size: var(--font-size-base);
+}
+
+.modal-body .form-group {
+  margin-bottom: 0;
+}
+
+.modal-body .form-control {
+  background-color: var(--grey-100);
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--grey-200);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modal-header {
+    padding: 1.25rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-footer {
+    padding: 1.25rem;
+    flex-direction: column-reverse;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+} 

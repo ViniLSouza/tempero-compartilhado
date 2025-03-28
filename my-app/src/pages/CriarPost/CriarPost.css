@@ -1,0 +1,445 @@
+/**
+ * Arquivo de estilos para a página de criar/editar publicação
+ * Contém todos os estilos necessários para o formulário de criação de posts
+ */
+
+/**
+ * Container principal da página
+ * Centraliza o conteúdo vertical e horizontalmente
+ */
+.criar-post-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 1rem;
+}
+
+/**
+ * Container do conteúdo principal
+ * Limita a largura máxima para melhor legibilidade
+ */
+.criar-post-content {
+  width: 100%;
+  max-width: 800px;
+}
+
+/**
+ * Card principal do formulário
+ * Contém o formulário de criação/edição de post
+ */
+.criar-post-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  transition: transform var(--transition-fast);
+}
+
+/**
+ * Efeito de hover no card
+ * Eleva levemente o card ao passar o mouse
+ */
+.criar-post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+/**
+ * Cabeçalho do card
+ * Contém o logo, título e descrição
+ */
+.criar-post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/**
+ * Logo da marca
+ * Estilização do logo e nome do site
+ */
+.brand {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/**
+ * Emoji do logo
+ * Ajuste do tamanho do emoji
+ */
+.brand span {
+  font-size: 2.5em;
+  line-height: 1;
+}
+
+/**
+ * Título do cabeçalho
+ */
+.criar-post-header h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/**
+ * Descrição do cabeçalho
+ */
+.criar-post-header p {
+  color: var(--grey-600);
+  font-size: var(--font-size-sm);
+}
+
+/**
+ * Formulário de criação/edição
+ * Layout em coluna com espaçamento entre elementos
+ */
+.criar-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/**
+ * Grupo de campos do formulário
+ * Layout em coluna com espaçamento entre label e input
+ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/**
+ * Labels dos campos
+ * Estilo consistente para todos os labels
+ */
+.form-group label {
+  color: var(--grey-700);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/**
+ * Estrela indicadora de campo obrigatório
+ */
+.required-star {
+  color: var(--danger);
+}
+
+/**
+ * Campos de entrada do formulário
+ * Estilo base para inputs e textareas
+ */
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--grey-200);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  background-color: var(--grey-100);
+  color: var(--grey-800);
+  font-family: var(--font-family);
+}
+
+/**
+ * Estado de foco dos campos
+ * Destaca o campo ativo
+ */
+.form-control:focus {
+  border-color: var(--primary-color);
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+/**
+ * Placeholder dos campos
+ */
+.form-control::placeholder {
+  color: var(--grey-500);
+}
+
+/**
+ * Estilo específico para textarea
+ * Altura mínima e redimensionamento vertical
+ */
+textarea.form-control {
+  min-height: 200px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/**
+ * Container do editor de texto
+ * Posicionamento relativo para elementos internos
+ */
+.editor-container {
+  position: relative;
+}
+
+/**
+ * Barra de ferramentas do editor
+ * Contém botões de formatação
+ */
+.editor-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--grey-100);
+  border-radius: 8px 8px 0 0;
+  border: 2px solid var(--grey-200);
+  border-bottom: none;
+}
+
+/**
+ * Botões da barra de ferramentas
+ */
+.toolbar-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--grey-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/**
+ * Estado hover dos botões da barra
+ */
+.toolbar-button:hover {
+  background-color: var(--grey-200);
+  color: var(--grey-800);
+}
+
+/**
+ * Estado ativo dos botões da barra
+ */
+.toolbar-button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/**
+ * Área de visualização do editor
+ * Mostra o conteúdo formatado
+ */
+.preview-area {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 2px solid var(--grey-200);
+  border-radius: 8px;
+  background-color: var(--white);
+}
+
+/**
+ * Imagens na área de visualização
+ */
+.preview-area img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/**
+ * Contador de caracteres
+ * Mostra o número de caracteres digitados
+ */
+.character-count {
+  font-size: var(--font-size-xs);
+  color: var(--grey-600);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+/**
+ * Estado limite do contador
+ * Destaca quando o limite é atingido
+ */
+.character-count.limit {
+  color: var(--danger);
+}
+
+/**
+ * Container dos botões de ação
+ * Layout flexível para os botões
+ */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+/**
+ * Botão principal de publicação
+ */
+.publish-button {
+  flex: 1;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+/**
+ * Estado hover do botão de publicação
+ */
+.publish-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+/**
+ * Estado desabilitado do botão de publicação
+ */
+.publish-button:disabled {
+  background-color: var(--grey-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/**
+ * Botão secundário (cancelar/voltar)
+ */
+.draft-button {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/**
+ * Estado hover do botão secundário
+ */
+.draft-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/**
+ * Mensagem de erro
+ * Estilo para exibição de erros
+ */
+.error-message {
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding: 0.75rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: var(--border-radius-md);
+}
+
+/**
+ * Botão de salvar
+ * Estilo para o botão de salvar alterações
+ */
+.save-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/**
+ * Estado hover do botão de salvar
+ */
+.save-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+/**
+ * Estado desabilitado do botão de salvar
+ */
+.save-button:disabled {
+  background-color: var(--grey-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/**
+ * Ícone do botão de salvar
+ */
+.save-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/**
+ * Media query para telas médias
+ */
+@media (max-width: 768px) {
+  .criar-post-card {
+    padding: 1.5rem;
+  }
+
+  .criar-post-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .publish-button, .draft-button {
+    width: 100%;
+  }
+}
+
+/**
+ * Media query para telas pequenas
+ */
+@media (max-width: 480px) {
+  .criar-post-content {
+    margin: 1rem auto;
+  }
+
+  .criar-post-card {
+    padding: 1rem;
+  }
+
+  .editor-toolbar {
+    flex-wrap: wrap;
+  }
+} 
