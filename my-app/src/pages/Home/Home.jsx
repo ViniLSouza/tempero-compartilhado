@@ -386,6 +386,33 @@ const Home = ({ navigate }) => {
     textarea.style.height = textarea.scrollHeight + 'px';
   };
 
+  const abrirModalExcluirComentario = (postId, comentarioId) => {
+    setComentarioParaExcluir({ postId, comentarioId });
+    setModalExcluirComentarioAberto(true);
+  };
+
+  const fecharModalExcluirComentario = () => {
+    setModalExcluirComentarioAberto(false);
+    setComentarioParaExcluir(null);
+  };
+
+  const handleDeletarComentario = async (postId, comentarioId) => {
+    try {
+      await apiService.delete(`/comentarios/${comentarioId}`);
+      
+      // Atualiza o estado dos comentários removendo o comentário excluído
+      setComentarios(prev => ({
+        ...prev,
+        [postId]: prev[postId].filter(comentario => comentario.id !== comentarioId)
+      }));
+
+      fecharModalExcluirComentario();
+    } catch (error) {
+      console.error('Erro ao excluir comentário:', error);
+      setError('Erro ao excluir comentário. Por favor, tente novamente.');
+    }
+  };
+
   return (
     <div className="home-container">
       {/* Cabeçalho com logo e menu do usuário */}
