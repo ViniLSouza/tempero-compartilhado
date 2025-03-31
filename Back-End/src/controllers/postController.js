@@ -69,7 +69,8 @@ exports.listarPosts = async (req, res) => {
           select: {
             id: true,
             nome: true,
-            email: true
+            email: true,
+            foto: true
           }
         },
         _count: {
@@ -114,7 +115,8 @@ exports.buscarPost = async (req, res) => {
           select: {
             id: true,
             nome: true,
-            email: true
+            email: true,
+            foto: true
           }
         },
         _count: {

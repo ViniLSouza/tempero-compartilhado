@@ -96,7 +96,8 @@ exports.listarComentariosPorPost = async (req, res) => {
           select: {
             id: true,
             nome: true,
-            email: true
+            email: true,
+            foto: true
           }
         }
       },

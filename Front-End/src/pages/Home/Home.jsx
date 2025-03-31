@@ -527,7 +527,14 @@ const Home = ({ navigate }) => {
             {posts.map(post => (
               <div key={post.id} className="post-card">
                 <div className="post-header">
-                  <span>{post.usuario?.nome || 'Usuário Anônimo'}</span>
+                  <div className="post-author">
+                    <img 
+                      src={post.usuario?.foto ? `${API_BASE_URL}${post.usuario.foto}` : DEFAULT_AVATAR}
+                      alt={`Foto de perfil de ${post.usuario?.nome}`}
+                      className="post-author-avatar"
+                    />
+                    <span>{post.usuario?.nome || 'Usuário Anônimo'}</span>
+                  </div>
                   <div className="post-meta-right">
                     {post.usuarioId === user?.id && (
                       <button
@@ -593,7 +600,14 @@ const Home = ({ navigate }) => {
                     {comentarios[post.id]?.map(comentario => (
                       <div key={comentario.id} className="comentario-item">
                         <div className="comentario-header">
-                          <span className="comentario-autor">{comentario.usuario.nome}</span>
+                          <div className="comentario-autor">
+                            <img 
+                              src={comentario.usuario?.foto ? `${API_BASE_URL}${comentario.usuario.foto}` : DEFAULT_AVATAR}
+                              alt={`Foto de perfil de ${comentario.usuario?.nome}`}
+                              className="comentario-autor-avatar"
+                            />
+                            <span>{comentario.usuario?.nome}</span>
+                          </div>
                           <span className="comentario-data">{formatDate(comentario.dataComentario)}</span>
                         </div>
                         <p className="comentario-texto">{comentario.comentario}</p>

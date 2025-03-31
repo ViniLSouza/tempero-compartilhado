@@ -269,8 +269,22 @@ textarea.form-control {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 107, 107, 0.1);
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
 }
 
 .post-header span {
@@ -282,7 +296,9 @@ textarea.form-control {
 .post-meta-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .edit-button {
@@ -730,7 +746,7 @@ textarea.form-control {
 .like-count {
   font-size: 0.9rem;
   min-width: 2rem;
-  text-align: left;
+  text-align: center;
 }
 
 .comentarios-section {
@@ -938,13 +954,27 @@ textarea.form-control {
 }
 
 .comentario-autor {
-  font-weight: 600;
-  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comentario-autor-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--grey-200);
+}
+
+.comentario-autor span {
+  font-weight: 500;
+  color: var(--primary-color);
 }
 
 .comentario-data {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: var(--grey-400);
 }
 
 .comentario-texto {
@@ -956,8 +986,6 @@ textarea.form-control {
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
-  padding-right: 0.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .deletar-comentario {
