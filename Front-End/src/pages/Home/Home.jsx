@@ -342,32 +342,33 @@ const Home = ({ navigate }) => {
   };
 
   const handleComentar = async (postId, event) => {
-    const comentarioTexto = novosComentarios[postId] || '';
-    if (!comentarioTexto.trim()) return;
+    event.preventDefault();
+    const comentario = novosComentarios[postId]?.trim();
+    
+    if (!comentario) return;
 
     try {
       const response = await apiService.post('/comentarios', {
-        comentario: comentarioTexto,
+        comentario,
         postId
       });
 
+      // Atualiza o estado dos comentários com o novo comentário
       setComentarios(prev => ({
         ...prev,
-        [postId]: [response, ...prev[postId]]
+        [postId]: [response, ...(prev[postId] || [])]
       }));
 
-      // Limpar apenas o comentário do post específico
+      // Limpa o campo de comentário
       setNovosComentarios(prev => ({
         ...prev,
         [postId]: ''
       }));
-      
-      // Resetar altura do textarea
-      const textarea = event.target.closest('.novo-comentario').querySelector('textarea');
-      textarea.style.height = '44px';
+
+      // Remove o foco do textarea
+      setTextareaFocado(null);
     } catch (error) {
       console.error('Erro ao adicionar comentário:', error);
-      setError('Erro ao adicionar comentário. Por favor, tente novamente.');
     }
   };
 

@@ -98,7 +98,15 @@ A aplicação estará disponível em `http://localhost:5173`
 - Adição de comentários em posts
 - Edição e exclusão de comentários próprios
 - Expansão/contração da seção de comentários
-- Notificações de novos comentários
+- Exibição de foto de perfil nos comentários
+- Interface intuitiva para interação
+
+### 👤 Gerenciamento de Perfil
+- Cadastro e login de usuários
+- Edição de dados pessoais
+- Upload e gerenciamento de foto de perfil
+- Visualização de posts e comentários próprios
+- Sistema de validação de dados
 
 ### 👤 Perfil de Usuário
 - Cadastro e autenticação seguros
@@ -106,6 +114,20 @@ A aplicação estará disponível em `http://localhost:5173`
 - Upload de foto de perfil
 - Histórico de atividades
 - Gerenciamento de preferências
+
+### 🎨 Interface e UX
+- Design responsivo e moderno
+- Feedback visual em tempo real
+- Animações suaves
+- Sistema de notificações
+- Navegação intuitiva
+- Exibição de fotos de perfil em posts e comentários
+
+### 📚 Documentação
+- Código documentado com comentários explicativos
+- READMEs atualizados com instruções detalhadas
+- Documentação das rotas da API
+- Guias de configuração e instalação
 
 ## 🛠️ Tecnologias Utilizadas
 
