@@ -1,7 +1,10 @@
 /**
  * Contexto de Autenticação
- * Gerencia o estado global de autenticação da aplicação
- * Fornece funções para login, cadastro, logout e verificação de autenticação
+ * Este arquivo é responsável por:
+ * - Gerenciar o estado de autenticação da aplicação
+ * - Fornecer funções para login, logout e registro
+ * - Armazenar e gerenciar o token JWT
+ * - Disponibilizar informações do usuário autenticado
  */
 import { createContext, useState, useEffect, useContext } from 'react';
 import { authService } from '../services/authService';

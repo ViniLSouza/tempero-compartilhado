@@ -1,11 +1,12 @@
 /**
  * Controller para gerenciamento de usuários
- * Este arquivo contém todas as funções relacionadas às operações de usuário:
- * - Criação de usuário
- * - Login
- * - Listagem
- * - Edição
- * - Remoção
+ * Este arquivo é responsável por:
+ * - Criação de usuários
+ * - Autenticação (login)
+ * - Listagem de usuários
+ * - Edição de dados do usuário
+ * - Remoção de usuários
+ * - Gerenciamento de fotos de perfil
  */
 
 const { PrismaClient } = require('@prisma/client');

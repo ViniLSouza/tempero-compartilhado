@@ -250,3 +250,15 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para
 ---
 
 ⭐ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub!
+
+## Últimas Atualizações
+
+### Layout e UI
+- Adicionada foto do usuário no cabeçalho dos posts
+- Adicionada foto do usuário nos comentários
+- Ajustados paddings do post-header e comentários
+- Melhorada a consistência visual dos elementos
+
+### Funcionalidades
+- Implementada exibição de fotos de perfil nos posts e comentários
+- Adicionado fallback para avatar padrão quando não há foto

@@ -1,3 +1,11 @@
+/**
+ * Componente de Roteamento
+ * Este arquivo é responsável por:
+ * - Gerenciar as rotas da aplicação
+ * - Controlar o acesso às rotas baseado na autenticação
+ * - Renderizar os componentes apropriados para cada rota
+ */
+
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import Login from '../pages/Login/Login';

@@ -309,4 +309,14 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para
 
 ---
 
-⭐ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub! 
+⭐ Se você gostou deste projeto, por favor, deixe uma estrela no GitHub!
+
+## Últimas Atualizações
+
+### Funcionalidades
+- Adicionado suporte para fotos de perfil nos comentários
+- Melhorada a integração com o frontend para exibição de fotos
+
+### Documentação
+- Adicionados comentários explicativos nos arquivos principais
+- Melhorada a documentação das rotas e controllers 

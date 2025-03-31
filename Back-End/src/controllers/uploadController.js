@@ -1,3 +1,12 @@
+/**
+ * Controller para gerenciamento de uploads
+ * Este arquivo é responsável por:
+ * - Upload de imagens de perfil
+ * - Remoção de imagens de perfil
+ * - Validação de tipos de arquivo
+ * - Gerenciamento de armazenamento de arquivos
+ */
+
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 

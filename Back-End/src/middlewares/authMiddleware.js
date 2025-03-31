@@ -1,13 +1,10 @@
 /**
- * Middleware de autenticação
- * Este middleware verifica se o usuário está autenticado antes de permitir
- * o acesso a rotas protegidas.
- * 
- * Processo:
- * 1. Extrai o token JWT do header Authorization
- * 2. Verifica se o token é válido
- * 3. Verifica se o usuário associado ao token existe
- * 4. Permite o acesso à rota ou retorna erro
+ * Middleware de Autenticação
+ * Este arquivo é responsável por:
+ * - Verificar tokens JWT
+ * - Extrair informações do usuário do token
+ * - Proteger rotas que requerem autenticação
+ * - Gerenciar erros de autenticação
  */
 
 const jwt = require('jsonwebtoken');

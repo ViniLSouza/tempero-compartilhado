@@ -1,3 +1,12 @@
+/**
+ * Configuração do Multer
+ * Este arquivo é responsável por:
+ * - Configurar o armazenamento de arquivos
+ * - Definir tipos de arquivos permitidos
+ * - Gerar nomes únicos para arquivos
+ * - Gerenciar validação de uploads
+ */
+
 const multer = require('multer');
 const path = require('path');
 const crypto = require('crypto');

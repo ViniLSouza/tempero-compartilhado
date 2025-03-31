@@ -1,10 +1,11 @@
 /**
  * Controller para gerenciamento de comentários
- * Este arquivo contém todas as funções relacionadas às operações de comentários:
- * - Criação de comentário
- * - Listagem de comentários de um post
- * - Edição de comentário
- * - Remoção de comentário
+ * Este arquivo é responsável por:
+ * - Criação de comentários
+ * - Listagem de comentários por post
+ * - Edição de comentários
+ * - Remoção de comentários
+ * - Gerenciamento de permissões
  */
 
 const { PrismaClient } = require('@prisma/client');

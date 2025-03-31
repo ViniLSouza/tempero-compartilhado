@@ -1,10 +1,11 @@
 /**
  * Controller para gerenciamento de curtidas
- * Este arquivo contém todas as funções relacionadas às operações de curtidas:
- * - Adicionar curtida
- * - Remover curtida
+ * Este arquivo é responsável por:
+ * - Adicionar curtidas a posts
+ * - Remover curtidas de posts
  * - Verificar se usuário curtiu um post
  * - Contar curtidas de um post
+ * - Listar usuários que curtiram um post
  */
 
 const { PrismaClient } = require('@prisma/client');

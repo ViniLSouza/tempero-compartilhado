@@ -1,11 +1,12 @@
 /**
- * Controller para gerenciamento de publicações (posts)
- * Este arquivo contém todas as funções relacionadas às operações de posts:
- * - Criação de post
- * - Listagem de posts (todos ou de um usuário específico)
- * - Visualização de um post
- * - Edição de post
- * - Remoção de post
+ * Controller para gerenciamento de posts
+ * Este arquivo é responsável por:
+ * - Criação de posts
+ * - Listagem de posts (todos ou por usuário)
+ * - Visualização de post específico
+ * - Edição de posts
+ * - Remoção de posts
+ * - Gerenciamento de curtidas
  */
 
 const { PrismaClient } = require('@prisma/client');
