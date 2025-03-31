@@ -221,4 +221,82 @@ exports.deletarUsuario = async (req, res) => {
     console.error(erro);
     return res.status(500).json({ erro: 'Erro ao deletar usuário' });
   }
+};
+
+/**
+ * Busca usuários por nome
+ * @route GET /api/usuarios/buscar
+ * @param {string} req.query.nome - Nome ou parte do nome do usuário
+ * @returns {Array} Lista de usuários encontrados
+ */
+exports.buscarUsuarios = async (req, res) => {
+  try {
+    const { nome } = req.query;
+
+    // Busca usuários que começam com o nome (case insensitive)
+    const usuariosComecamCom = await prisma.usuario.findMany({
+      where: {
+        nome: {
+          startsWith: nome,
+          mode: 'insensitive'
+        }
+      },
+      select: {
+        id: true,
+        nome: true,
+        foto: true
+      }
+    });
+
+    // Busca usuários que correspondam exatamente ao nome (case insensitive)
+    const usuariosExatos = await prisma.usuario.findMany({
+      where: {
+        nome: {
+          equals: nome,
+          mode: 'insensitive'
+        },
+        // Exclui os usuários que já foram encontrados na busca de começa com
+        NOT: {
+          id: {
+            in: usuariosComecamCom.map(u => u.id)
+          }
+        }
+      },
+      select: {
+        id: true,
+        nome: true,
+        foto: true
+      }
+    });
+
+    // Busca usuários que contenham o nome (case insensitive)
+    const usuariosParciais = await prisma.usuario.findMany({
+      where: {
+        nome: {
+          contains: nome,
+          mode: 'insensitive'
+        },
+        // Exclui os usuários que já foram encontrados nas buscas anteriores
+        NOT: {
+          id: {
+            in: [...usuariosComecamCom, ...usuariosExatos].map(u => u.id)
+          }
+        }
+      },
+      select: {
+        id: true,
+        nome: true,
+        foto: true
+      },
+      take: 10 // Limita a 10 resultados
+    });
+
+    // Combina os resultados na ordem de prioridade
+    const resultados = [...usuariosComecamCom, ...usuariosExatos, ...usuariosParciais];
+
+    return res.json(resultados);
+  } catch (erro) {
+    console.error(erro);
+    return res.status(500).json({ erro: 'Erro ao buscar usuários' });
+  }
 }; 

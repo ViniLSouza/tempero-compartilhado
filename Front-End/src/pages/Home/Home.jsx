@@ -59,6 +59,10 @@ const Home = ({ navigate }) => {
 
   const MAX_COMENTARIO_LENGTH = 1000;
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+
   /**
    * Carrega os posts ao montar o componente
    */
@@ -414,6 +418,23 @@ const Home = ({ navigate }) => {
     }
   };
 
+  const handleSearch = async (term) => {
+    setSearchTerm(term);
+    if (term.length >= 2) {
+      try {
+        const response = await apiService.get(`/usuarios/buscar?nome=${term}`);
+        setSearchResults(response);
+        setShowSearchResults(true);
+      } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
+        setSearchResults([]);
+      }
+    } else {
+      setSearchResults([]);
+      setShowSearchResults(false);
+    }
+  };
+
   return (
     <div className="home-container">
       {/* Cabeçalho com logo e menu do usuário */}
@@ -421,6 +442,32 @@ const Home = ({ navigate }) => {
         <div className="logo">
           <span role="img" aria-label="blog icon">🌶️</span> Tempero Compartilhado
         </div>
+        
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Buscar usuários..."
+            value={searchTerm}
+            onChange={(e) => handleSearch(e.target.value)}
+            className="search-input"
+            onFocus={() => setShowSearchResults(true)}
+          />
+          {showSearchResults && searchResults.length > 0 && (
+            <div className="search-results">
+              {searchResults.map((usuario) => (
+                <div key={usuario.id} className="search-result-item">
+                  <img 
+                    src={usuario.foto ? `${API_BASE_URL}${usuario.foto}` : DEFAULT_AVATAR}
+                    alt={`Foto de ${usuario.nome}`}
+                    className="search-result-avatar"
+                  />
+                  <span className="search-result-name">{usuario.nome}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         <div className="user-menu">
           <img 
             src={user?.foto ? `${API_BASE_URL}${user.foto}` : DEFAULT_AVATAR} 

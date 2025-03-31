@@ -42,6 +42,14 @@ router.post('/login', usuarioController.login);
 router.get('/', usuarioController.listarUsuarios);
 
 /**
+ * @route GET /api/usuarios/buscar
+ * @desc Busca usuários por nome
+ * @access Public
+ * @query {nome} - Nome ou parte do nome do usuário
+ */
+router.get('/buscar', usuarioController.buscarUsuarios);
+
+/**
  * Middleware de Autenticação
  * Todas as rotas abaixo deste middleware precisarão de autenticação
  * O token JWT deve ser enviado no header Authorization: Bearer [token]
